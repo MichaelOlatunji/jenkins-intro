@@ -21,7 +21,7 @@
     region: us-west-2
     group_id:
       - sg-0a8424de3e59df9b5
-    wait: yes
+    wait: no
     instance_tags:
       Name: web_server
       application: "{{ application }}"
