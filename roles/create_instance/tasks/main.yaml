@@ -16,12 +16,11 @@
   ec2:
     key_name: devops-nanodegree-keys
     instance_type: t2.nano
-    image: ami-005bdb005fb00e791
+    image: ami-0986c2ac728528ac2
     user_data: "{{ USERDATA }}"
     region: us-west-2
     group_id:
       - sg-0a8424de3e59df9b5
-      - sg-04e5eb3314fcec955
     wait: yes
     instance_tags:
       Name: web_server
