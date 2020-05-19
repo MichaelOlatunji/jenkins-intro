@@ -14,7 +14,7 @@
 
 - name: Create EC2 instances
   ec2:
-    key_name: Jenkins_demo
+    key_name: devops-nanodegree-keys
     instance_type: t2.nano
     image: ami-005bdb005fb00e791
     user_data: "{{ USERDATA }}"
