@@ -1,5 +1,5 @@
 - name: Create the ELB only listening over port 80
-  ec2_application_lb:
+  elb_application_lb:
     name: "{{ ELBNAME }}"
     state: present
     region: us-west-2
