@@ -1,15 +1,19 @@
 - name: Create the ELB only listening over port 80
-  ec2_elb_lb:
+  ec2_application_lb:
     name: "{{ ELBNAME }}"
     state: present
     region: us-west-2
-    zones:
-      - us-west-2a
-      - us-west-2b
+    security_groups:
+      - sg-04e5eb3314fcec955
+    subnets:
+      - subnet-4d233806
+      - subnet-86619ffe
     listeners:
-      - protocol: http
-        load_balancer_port: 80
-        instance_port: 80
+      - Protocol: HTTP
+        Port: 80
+    DefaultActions:
+          - Type: forward
+            TargetGroupName: test-target-group
   register: elb
 
 - name: Create EC2 instances
