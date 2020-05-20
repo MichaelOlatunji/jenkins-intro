@@ -3,7 +3,7 @@ set -e -x
 export DEBIAN_FRONTEND=noninteractive
 sudo locale-gen pt_BR.UTF-8
 sudo apt-get install -y nginx
-cat > /etc/nginx/sites-enabled/default << EOF
+sudo bash -c "cat > /etc/nginx/sites-enabled/default << EOF
 server {
     #listen   80; ## listen for ipv4; this line is default and implied
     #listen   [::]:80 default_server ipv6only=on; ## listen for ipv6
@@ -22,8 +22,9 @@ server {
 
     }
 }
-EOF
-cat > /var/www/html/index.html << HEREDOC
+EOF"
+
+sudo bash -c "cat > /var/www/html/index.html << HEREDOC
 <!DOCTYPE html>
 <html>
 <body>
@@ -32,6 +33,6 @@ cat > /var/www/html/index.html << HEREDOC
 
 </body>
 </html>
-HEREDOC
+HEREDOC"
 sudo systemctl enable nginx
 sudo systemctl start nginx
