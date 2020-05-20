@@ -22,7 +22,7 @@ server {
 
     }
 }
-EOF' \
+EOF'
 sudo bash -c 'cat > /var/www/html/index.html << HEREDOC
 <!DOCTYPE html>
 <html>
